@@ -11,7 +11,8 @@
 		"test": "npm run test:integration && npm run test:unit",
 		"lint": "eslint .",
 		"test:integration": "playwright test",
-		"test:unit": "vitest"
+		"test:unit": "vitest",
+		"watch": "sass --watch styles:src/lib/styles"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
