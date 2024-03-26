@@ -1,8 +1,9 @@
 <svelte:head>
     <title>Task Tracker</title>
 </svelte:head>
-<Header />
-<Main  data={Data}/>
+<AddTask />
+<Header data={Data} currentBoard={currentBoard} />
+<Main  data={Data} currentBoard={currentBoard}/>
 
 
 <style>
@@ -14,4 +15,7 @@
     import Main from '../lib/components/Main.svelte';
 
     import Data from '../data.json';
+    import AddTask from '../lib/components/overlays/AddTask.svelte';
+
+    let currentBoard = 0;
 </script>

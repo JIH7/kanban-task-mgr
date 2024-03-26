@@ -8,6 +8,72 @@ body {
   color: #000112;
 }
 
+.backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #000112;
+  opacity: 35%;
+  z-index: 1;
+}
+
+.overlay-menu-container {
+  position: fixed;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+}
+
+.overlay-menu {
+  margin: 6rem 1rem;
+  padding: 1.5rem;
+  background-color: #FFFFFF;
+  border-radius: 0.5rem;
+}
+.overlay-menu * {
+  margin: 0;
+}
+.overlay-menu h2 {
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.overlay-menu form {
+  display: flex;
+  flex-direction: column;
+}
+.overlay-menu label {
+  margin-block-start: 1.5rem;
+  color: #3E3F4E;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.overlay-menu textarea, .overlay-menu input {
+  margin-block-start: 0.5rem;
+  border: 2px solid #828FA3;
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4375rem;
+}
+.overlay-menu input {
+  height: 2.5rem;
+}
+.overlay-menu textarea {
+  height: 7rem;
+}
+.overlay-menu textarea:focus, .overlay-menu input:focus {
+  outline: none;
+  border: 2px solid #635FC7;
+}
+
 header {
   box-sizing: border-box;
   padding: 0 1rem;
