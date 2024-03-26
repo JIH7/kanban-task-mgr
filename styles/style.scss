@@ -1,19 +1,93 @@
+$button-purple: #635FC7;
+$background-gray: #A8A4FF;
+$black: #000112;
+$ver-dark-gray: #20212C;
+$dark-gray: #2B2C37;
+$gray: #3E3F4E;
+$light-gray: #828FA3;
+$very-light-gray: #E4EBFA;
+$extremely-light-gray: #F4F7FD;
+$white: #FFFFFF;
+$red: #EA5555;
+$pink: #FF9898;
+
+@font-face {
+    font-family: 'PlusJakartaSans';
+    src: url('../fonts/PlusJakartaSans-VariableFont_wght.ttf');
+}
+
 body {
     margin: 0;
-    padding: 0 1rem;
+
+    font-family: 'PlusJakartaSans', sans-serif;
+    color: $black;
 }
 
 header {
+    box-sizing: border-box;
+    padding: 0 1rem;
+
     height: 4rem;
     width: 100%;
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
+
+    background-color: $white;
+
+    .header-left {
+        display: flex;
+        align-items: center;
+
+        h1 {
+            margin-inline-start: 1rem;
+        }
+
+        h1 + img {
+            margin-inline-start: .4rem;
+        }
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+
+        button {
+            padding: auto;
+            background-color: $button-purple;
+            border-radius: 1.4rem;
+            width: 3rem;
+            height: 2rem;
+            border: none;
+        }
+
+        button + button {
+            padding: 0;
+            background-color: unset;
+        }
+    }
+
+    h1 {
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
 }
 
 main {
+    padding: 0 1rem;
+    box-sizing: border-box;
+
     display: flex;
     overflow-x: hidden;
+
+    background-color: $extremely-light-gray;
+
+    section + section {
+        margin-inline-start: 1.5rem;
+    }
 }
 
 .empty-holder {
@@ -31,11 +105,66 @@ main {
     width: 75vw;
     flex-shrink: 0;
 
+    h3 {
+
+        display: flex;
+        align-items: center;
+
+        color: $light-gray;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.15rem;
+
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+
+        > * + *{
+            margin-inline-start: .19rem;
+        }
+    }
+
+    h3 > div {
+        border-radius: 50%;
+        height: .93rem;
+        width: .93rem;
+        background-color: $button-purple;
+    }
+
+    h3 + article {
+        margin-block-start: 1.5rem;
+    }
+
     > article {
         height: 5.5rem;
+
         width: 100%;
+        padding: 1.44rem 1rem;
+        box-sizing: border-box;
+        
         border-radius: .5rem;
         box-shadow: 0px 4px 6px 0px rgba(54, 78, 126, 0.10);
+        background-color: $white;
+
+        > h2 {
+            margin: 0;
+
+            font-size: 0.9375rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        > p {
+            font-size: 0.75rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+
+            color: $light-gray;
+        }
     }
 
     > article + article {

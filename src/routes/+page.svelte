@@ -2,7 +2,7 @@
     <title>Task Tracker</title>
 </svelte:head>
 <Header />
-<Main />
+<Main  data={Data}/>
 
 
 <style>
@@ -12,4 +12,6 @@
 <script>
     import Header from '../lib/components/header.svelte';
     import Main from '../lib/components/Main.svelte';
+
+    import Data from '../data.json';
 </script>

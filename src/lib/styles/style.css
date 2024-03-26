@@ -1,18 +1,65 @@
+@font-face {
+  font-family: "PlusJakartaSans";
+  src: url("../fonts/PlusJakartaSans-VariableFont_wght.ttf");
+}
 body {
   margin: 0;
-  padding: 0 1rem;
+  font-family: "PlusJakartaSans", sans-serif;
+  color: #000112;
 }
 
 header {
+  box-sizing: border-box;
+  padding: 0 1rem;
   height: 4rem;
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+}
+header .header-left {
+  display: flex;
+  align-items: center;
+}
+header .header-left h1 {
+  margin-inline-start: 1rem;
+}
+header .header-left h1 + img {
+  margin-inline-start: 0.4rem;
+}
+header .header-right {
+  display: flex;
+  align-items: center;
+}
+header .header-right button {
+  padding: auto;
+  background-color: #635FC7;
+  border-radius: 1.4rem;
+  width: 3rem;
+  height: 2rem;
+  border: none;
+}
+header .header-right button + button {
+  padding: 0;
+  background-color: unset;
+}
+header h1 {
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 main {
+  padding: 0 1rem;
+  box-sizing: border-box;
   display: flex;
   overflow-x: hidden;
+  background-color: #F4F7FD;
+}
+main section + section {
+  margin-inline-start: 1.5rem;
 }
 
 .empty-holder {
@@ -30,11 +77,53 @@ main {
   width: 75vw;
   flex-shrink: 0;
 }
+.task-column h3 {
+  display: flex;
+  align-items: center;
+  color: #828FA3;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.15rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+.task-column h3 > * + * {
+  margin-inline-start: 0.19rem;
+}
+.task-column h3 > div {
+  border-radius: 50%;
+  height: 0.93rem;
+  width: 0.93rem;
+  background-color: #635FC7;
+}
+.task-column h3 + article {
+  margin-block-start: 1.5rem;
+}
 .task-column > article {
   height: 5.5rem;
   width: 100%;
+  padding: 1.44rem 1rem;
+  box-sizing: border-box;
   border-radius: 0.5rem;
   box-shadow: 0px 4px 6px 0px rgba(54, 78, 126, 0.1);
+  background-color: #FFFFFF;
+}
+.task-column > article > h2 {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.task-column > article > p {
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: #828FA3;
 }
 .task-column > article + article {
   margin-block-start: 1.25rem;
