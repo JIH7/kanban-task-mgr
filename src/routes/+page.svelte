@@ -1,8 +1,10 @@
 <svelte:head>
     <title>Task Tracker</title>
 </svelte:head>
-<AddTask />
-<Header data={Data} currentBoard={currentBoard} />
+{#if showAddTask}
+    <AddTask data={Data} currentBoard={currentBoard} on:addTask={handleSubmitTask}/>
+{/if}
+<Header data={Data} currentBoard={currentBoard} on:showAddTask={handleAddTask} />
 <Main  data={Data} currentBoard={currentBoard}/>
 
 
@@ -18,4 +20,16 @@
     import AddTask from '../lib/components/overlays/AddTask.svelte';
 
     let currentBoard = 0;
+    let showAddTask = false;
+
+    function handleAddTask() {
+        showAddTask = true;
+    }
+
+    function handleSubmitTask(event) {
+        const task = event.detail;
+        Data.boards[currentBoard].columns[0].tasks.push(task);
+        Data.boards[currentBoard] = Data.boards[currentBoard];
+        showAddTask = false;
+    }
 </script>

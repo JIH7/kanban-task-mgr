@@ -1,7 +1,3 @@
-@font-face {
-  font-family: "PlusJakartaSans";
-  src: url("../fonts/PlusJakartaSans-VariableFont_wght.ttf");
-}
 body {
   margin: 0;
   font-family: "PlusJakartaSans", sans-serif;
@@ -27,10 +23,12 @@ body {
 }
 
 .overlay-menu {
-  margin: 6rem 1rem;
+  margin: 4rem 1rem;
   padding: 1.5rem;
   background-color: #FFFFFF;
   border-radius: 0.5rem;
+  max-height: 75vh;
+  overflow-y: scroll;
 }
 .overlay-menu * {
   margin: 0;
@@ -45,7 +43,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-.overlay-menu label {
+.overlay-menu label, .overlay-menu p {
   margin-block-start: 1.5rem;
   color: #3E3F4E;
   font-size: 0.75rem;
@@ -53,10 +51,12 @@ body {
   font-weight: 700;
   line-height: normal;
 }
-.overlay-menu textarea, .overlay-menu input {
+.overlay-menu textarea, .overlay-menu input, .overlay-menu select {
   margin-block-start: 0.5rem;
   border: 2px solid #828FA3;
   border-radius: 0.3rem;
+  width: 100%;
+  box-sizing: border-box;
   padding: 0.5rem 1rem;
   font-size: 0.8125rem;
   font-style: normal;
@@ -69,9 +69,42 @@ body {
 .overlay-menu textarea {
   height: 7rem;
 }
-.overlay-menu textarea:focus, .overlay-menu input:focus {
+.overlay-menu textarea:focus, .overlay-menu input:focus, .overlay-menu select:focus {
   outline: none;
   border: 2px solid #635FC7;
+}
+.overlay-menu ul {
+  list-style: none;
+  padding: 0;
+}
+.overlay-menu li {
+  display: flex;
+  align-items: center;
+  margin-block-start: 0.5rem;
+}
+.overlay-menu li input {
+  margin: 0;
+}
+.overlay-menu li button {
+  border: none;
+  margin: 0;
+  background-color: unset;
+}
+.overlay-menu button {
+  margin-block-start: 1.5rem;
+  border-radius: 1.25rem;
+  height: 2.5rem;
+  border: none;
+  background-color: #E4EBFA;
+  color: #635FC7;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.4375rem;
+}
+.overlay-menu .submit-button {
+  background-color: #635FC7;
+  color: #FFFFFF;
 }
 
 header {
@@ -165,10 +198,10 @@ main section + section {
   width: 0.93rem;
   background-color: #635FC7;
 }
-.task-column h3 + article {
+.task-column article {
   margin-block-start: 1.5rem;
 }
-.task-column > article {
+.task-column > div > article {
   height: 5.5rem;
   width: 100%;
   padding: 1.44rem 1rem;
@@ -177,14 +210,14 @@ main section + section {
   box-shadow: 0px 4px 6px 0px rgba(54, 78, 126, 0.1);
   background-color: #FFFFFF;
 }
-.task-column > article > h2 {
+.task-column > div > article > h2 {
   margin: 0;
   font-size: 0.9375rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
-.task-column > article > p {
+.task-column > div > article > p {
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 700;

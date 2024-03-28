@@ -11,11 +11,6 @@ $white: #FFFFFF;
 $red: #EA5555;
 $pink: #FF9898;
 
-@font-face {
-    font-family: 'PlusJakartaSans';
-    src: url('../fonts/PlusJakartaSans-VariableFont_wght.ttf');
-}
-
 body {
     margin: 0;
 
@@ -42,11 +37,14 @@ body {
 }
 
 .overlay-menu {
-    margin: 6rem 1rem;
+    margin: 4rem 1rem;
     padding: 1.5rem;
 
     background-color: $white;
     border-radius: .5rem;
+
+    max-height: 75vh;
+    overflow-y: scroll;
 
     * {
         margin: 0;
@@ -64,7 +62,7 @@ body {
         flex-direction: column;
     }
 
-    label {
+    label, p {
         margin-block-start: 1.5rem;
 
         color: $gray;
@@ -74,11 +72,13 @@ body {
         line-height: normal;
     }
 
-    textarea, input {
+    textarea, input, select {
         margin-block-start: .5rem;
 
         border: 2px solid $light-gray;
         border-radius: .3rem;
+        width: 100%;
+        box-sizing: border-box;
 
         padding: .5rem 1rem;
 
@@ -96,9 +96,49 @@ body {
         height: 7rem;
     }
 
-    textarea:focus, input:focus {
+    textarea:focus, input:focus, select:focus {
         outline: none;
         border: 2px solid $button-purple;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+
+        margin-block-start: .5rem;
+
+        input {
+            margin: 0;
+        }
+
+        button {
+            border: none;
+            margin: 0;
+            background-color: unset;
+        }
+    }
+
+    button {
+        margin-block-start: 1.5rem;
+        border-radius: 1.25rem;
+        height: 2.5rem;
+        border: none;
+        background-color: $very-light-gray;
+        color: $button-purple;
+        font-size: 0.8125rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.4375rem;
+    }
+
+    .submit-button {
+        background-color: $button-purple;
+        color: $white;
     }
 }
 
@@ -212,11 +252,11 @@ main {
         background-color: $button-purple;
     }
 
-    h3 + article {
+    article {
         margin-block-start: 1.5rem;
     }
 
-    > article {
+    > div > article {
         height: 5.5rem;
 
         width: 100%;

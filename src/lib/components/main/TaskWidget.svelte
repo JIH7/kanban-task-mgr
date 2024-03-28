@@ -5,6 +5,6 @@
 
 <script>
     export let task;
-    export let completedSubtasks;
+    export let completedSubtasks = 0;
     export let totalSubtasks;
 </script>

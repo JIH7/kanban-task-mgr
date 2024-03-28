@@ -5,12 +5,20 @@
         <img src={DownArrow} alt="down-arrow">
     </div>
     <div class="header-right">
-        <button><img src={AddTaskButton} alt="add-task"></button>
+        <button on:click={handleAddTask}><img src={AddTaskButton} alt="add-task"></button>
         <button><img src={VertElips} alt="vert-elips"></button>
     </div>
 </header>
 
 <script>
+    import { createEventDispatcher } from 'svelte';
+
+    const dispatch = createEventDispatcher();
+
+    function handleAddTask() {
+        dispatch('showAddTask');
+    }
+
     import LogoMobile from '../assets/logo-mobile.svg';
     import LogoLight from '../assets/logo-light.svg';
     import LogoDark from '../assets/logo-dark.svg';
